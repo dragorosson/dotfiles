@@ -7,4 +7,4 @@ sudo apt-get update
 sudo apt-get install -y git
 
 ECHO_BLUE "Cloning dotfiles"
-git clone git@github.com:dragorosson/dotfiles.git
+git clone https://github.com/dragorosson/dotfiles.git
