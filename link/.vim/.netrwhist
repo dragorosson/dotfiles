@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/drag7507/workspace/vagrant_devstack'
+let g:netrw_dirhist_2='/Users/drag7507/workspace/horizon-vagrant'
+let g:netrw_dirhist_3='/Users/drag7507/dotfiles/link/zsh_custom/themes'
+let g:netrw_dirhist_4='/Users/drag7507/dotfiles/link/zsh_custom'
+let g:netrw_dirhist_5='/Users/drag7507/dotfiles'
+let g:netrw_dirhist_6='/Users/drag7507/workspace/ec2plugin'
