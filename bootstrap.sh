@@ -8,3 +8,8 @@ sudo apt-get install -y git
 
 ECHO_BLUE "Cloning dotfiles"
 git clone https://github.com/dragorosson/dotfiles.git
+
+cd dotfiles
+./linux.sh
+
+ECHO_BLUE "Welcome home."
