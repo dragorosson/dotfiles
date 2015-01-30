@@ -18,6 +18,7 @@ set backspace=indent,eol,start
 syntax enable
 let g:solarized_termtrans = 1
 colorscheme solarized
+set background=dark
 
 set colorcolumn=81
 highlight ColorColumn guibg=#f8f8f8 guifg=red
