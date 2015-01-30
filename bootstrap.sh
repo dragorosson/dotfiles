@@ -13,3 +13,4 @@ cd dotfiles
 ./linux.sh
 
 ECHO_BLUE "Welcome home."
+cd ~
