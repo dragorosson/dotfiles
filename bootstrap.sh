@@ -14,3 +14,4 @@ cd dotfiles
 
 ECHO_BLUE "Welcome home."
 cd ~
+exec zsh
