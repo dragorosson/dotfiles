@@ -52,8 +52,14 @@ autocmd InsertLeave * silent! :set relativenumber
 autocmd WinEnter * silent! :set relativenumber
 autocmd WinLeave * silent! :set norelativenumber
 
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+if exists('$TMUX')
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+else
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+endif
+
 set timeoutlen=1000 ttimeoutlen=0
 
 " :w!! = :w with sudo
