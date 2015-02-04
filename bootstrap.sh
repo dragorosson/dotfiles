@@ -10,6 +10,12 @@ ECHO_BLUE "Cloning dotfiles"
 git clone https://github.com/dragorosson/dotfiles.git
 
 cd dotfiles
+
+if [ $# -eq 1 ] ; then
+    ECHO_BLUE "Using branch $1"
+    git checkout $1
+fi
+
 ./linux.sh
 
 ECHO_BLUE "Welcome home."
