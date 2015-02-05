@@ -9,6 +9,9 @@ export EDITOR="vim"
 export KEYTIMEOUT=1
 bindkey -v 
 
+# Causes tmux to autodetect UTF-8 support
+export LC_ALL=en_US.UTF-8
+
 bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 bindkey '^P' history-search-backward
@@ -17,7 +20,7 @@ bindkey "^?" backward-delete-char
 
 setopt AUTO_CD
 
-# changes command-line cursor shape based on mode
+# Changes command-line cursor shape based on mode
 function tmux_block_cursor { printf '\033[0 q' }
 function tmux_line_cursor { printf '\033[6 q' }
 function zsh_block_cursor { print -n -- "\E]50;CursorShape=0\C-G" }

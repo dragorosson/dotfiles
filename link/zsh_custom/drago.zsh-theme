@@ -31,7 +31,7 @@ function VENV {
 }
 
 function FINAL {
-    git branch >/dev/null 2>/dev/null && echo $(TEXT blue)'±'$OFF && return
+    git branch >/dev/null 2>/dev/null && echo $(TEXT blue)'\xC2\xB1'$OFF && return
     echo $(TEXT red)\$$OFF
 }
 
