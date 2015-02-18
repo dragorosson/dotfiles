@@ -14,6 +14,7 @@ set ignorecase
 set smartcase
 set incsearch
 set backspace=indent,eol,start
+set laststatus=2
 
 syntax enable
 let g:solarized_termtrans = 1
