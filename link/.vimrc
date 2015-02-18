@@ -65,3 +65,10 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " :w!! = :w with sudo
 cmap w!! w !sudo tee > /dev/null %
+
+" Saves a session every time vim is quit. Helps in case of accidental quits.
+function! SaveSession()
+    execute 'mksession ~/.vim/sessions/' . strftime('%Y-%m-%d_%H-%M-%S') . '.session'
+endfunction
+
+autocmd VimLeave * call SaveSession()
