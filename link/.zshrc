@@ -59,3 +59,16 @@ zle -N zle-keymap-select
 function hgt {
     history | grep "$@" | tail
 }
+
+function p {
+    if [ "$#" -eq 0 ];
+        then tmux display-panes
+        return
+    fi
+
+    tmux select-pane -t $1
+}
+
+function z {
+    tmux resize-pane -Z -t $1
+}
