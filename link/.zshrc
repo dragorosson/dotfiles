@@ -9,6 +9,8 @@ export EDITOR="vim"
 export KEYTIMEOUT=1
 bindkey -v 
 
+bindkey -a u undo
+
 # Causes tmux to autodetect UTF-8 support
 export LC_ALL=en_US.UTF-8
 
