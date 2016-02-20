@@ -3,3 +3,5 @@
 	name = Drago Rosson
 [color]
 	ui = auto
+[core]
+	excludesfile = ~/.gitignore
