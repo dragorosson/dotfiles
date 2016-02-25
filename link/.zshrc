@@ -62,8 +62,8 @@ function hgt {
     history | grep "$@" | tail
 }
 
-function gitrefresh {
-    if [ $# -lt 2 ]; then
+function do_gitrefresh {
+    if [ $# -ne 2 ]; then
         echo "Use gitrefresh <remote> <branch>"
         return
     fi
@@ -77,6 +77,40 @@ function gitrefresh {
 
     git checkout $2 && git pull $1 $2
     git checkout -
+}
+
+function git {
+    # Custom aliases
+    if [[ $1 == "refresh" ]]; then
+        do_gitrefresh $2 $3
+        return
+    fi
+
+    if [[ $1 == "diffc" ]]; then
+        git diff --cached
+        return
+    fi
+
+    if [[ $1 == "addp" ]]; then
+        git add --patch
+        return
+    fi
+
+    # Modifications
+    if [[ $1 == "status" ]] && [[ $# -eq 1 ]]; then
+        git status -s
+        return
+    fi
+
+    if [[ $1 == "add" ]] || \
+       [[ $1 == "checkout" ]] || \
+       [[ $1 == "reset" ]] || \
+       [[ $1 == "rm" ]]; then
+        command git "$@" && echo "" && git status -s
+        return
+    fi
+
+    command git "$@"
 }
 
 function p {
