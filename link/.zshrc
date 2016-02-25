@@ -62,6 +62,23 @@ function hgt {
     history | grep "$@" | tail
 }
 
+function gitrefresh {
+    if [ $# -lt 2 ]; then
+        echo "Use gitrefresh <remote> <branch>"
+        return
+    fi
+
+    if ! {git diff --exit-code > /dev/null 2>&1 && \
+          git diff --cached --exit-code > /dev/null 2>&1}; then
+        git status --untracked-files=no
+        echo "Uncommitted changes found. Please clean the working directory."
+        return
+    fi
+
+    git checkout $2 && git pull $1 $2
+    git checkout -
+}
+
 function p {
     if [ "$#" -eq 0 ];
         then tmux display-panes
