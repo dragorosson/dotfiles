@@ -2,15 +2,17 @@
 
 ECHO_BLUE () { echo -e "\033[0;34m${1}\033[0m"; }
 
+tmux_file=tmux-2.2
+
 ECHO_BLUE "Installing tmux dependencies"
 sudo apt-get install -y ncurses-dev libevent-dev build-essential
 
-ECHO_BLUE "Downloading tmux 1.9a source"
-curl -OL http://downloads.sourceforge.net/tmux/tmux-1.9a.tar.gz
-tar zfx tmux-1.9a.tar.gz
+ECHO_BLUE "Downloading ${tmux_file} source"
+curl -OL https://github.com/tmux/tmux/releases/download/2.2/${tmux_file}.tar.gz
+tar zfx ${tmux_file}.tar.gz
 
 ECHO_BLUE "Compiling tmux"
-cd tmux-1.9a
+cd ${tmux_file}
 ECHO_BLUE "* Configuring..."
 ./configure > /dev/null
 ECHO_BLUE "* Running make..."
@@ -20,4 +22,4 @@ sudo make install > /dev/null
 
 ECHO_BLUE "Cleaning up"
 cd ..
-rm -rf tmux-1.9a tmux-1.9a.tar.gz
+rm -rf ${tmux_file} ${tmux_file}.tar.gz
