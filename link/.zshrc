@@ -125,3 +125,19 @@ function p {
 function z {
     tmux resize-pane -Z -t $1
 }
+
+# Heatclient aliases
+alias hsl="heat stack-list"
+alias hss="heat stack-show"
+alias hsc="heat stack-create"
+alias hsd="heat stack-delete"
+
+# Magnumclient aliases
+alias mbl="magnum bay-list"
+alias mbs="magnum bay-show"
+alias mbc="magnum bay-create"
+alias mbd="magnum bay-delete"
+alias mbml="magnum baymodel-list"
+alias mbms="magnum baymodel-show"
+alias mbmc="magnum baymodel-create"
+alias mbmd="magnum baymodel-delete"
