@@ -62,6 +62,14 @@ function hgt {
     history | grep "$@" | tail
 }
 
+function hh {
+    history | grep "$@" | tail | awk '{$1 = $1 - '"$HISTCMD"' - 1; print}'
+}
+
+function ff {
+    fc -$@
+}
+
 function do_gitrefresh {
     if [ $# -ne 2 ]; then
         echo "Use gitrefresh <remote> <branch>"
