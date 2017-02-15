@@ -144,13 +144,18 @@ alias hrl="heat resource-list"
 alias hrs="heat resource-show"
 
 # Magnumclient aliases
-alias mbl="magnum bay-list"
-alias mbs="magnum bay-show"
-alias mbc="magnum bay-create"
-alias mbu="magnum bay-update"
-alias mbd="magnum bay-delete"
-alias mbml="magnum baymodel-list"
-alias mbms="magnum baymodel-show"
-alias mbmc="magnum baymodel-create"
-alias mbmu="magnum baymodel-update"
-alias mbmd="magnum baymodel-delete"
+alias mcl="magnum cluster-list"
+alias mcs="magnum cluster-show"
+alias mcc="magnum cluster-create"
+alias mccfg="magnum cluster-config"
+alias mcu="magnum cluster-update"
+alias mcd="magnum cluster-delete"
+alias mctl="magnum cluster-template-list"
+alias mcts="magnum cluster-template-show"
+alias mctc="magnum cluster-template-create"
+alias mctu="magnum cluster-template-update"
+alias mctd="magnum cluster-template-delete"
+
+function ssf {
+    ssh fedora@$@
+}
