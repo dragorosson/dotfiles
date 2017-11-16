@@ -134,28 +134,6 @@ function z {
     tmux resize-pane -Z -t $1
 }
 
-# Heatclient aliases
-alias hsl="heat stack-list"
-alias hss="heat stack-show"
-alias hsc="heat stack-create"
-alias hsu="heat stack-update"
-alias hsd="heat stack-delete"
-alias hrl="heat resource-list"
-alias hrs="heat resource-show"
-
-# Magnumclient aliases
-alias mcl="magnum cluster-list"
-alias mcs="magnum cluster-show"
-alias mcc="magnum cluster-create"
-alias mccfg="magnum cluster-config"
-alias mcu="magnum cluster-update"
-alias mcd="magnum cluster-delete"
-alias mctl="magnum cluster-template-list"
-alias mcts="magnum cluster-template-show"
-alias mctc="magnum cluster-template-create"
-alias mctu="magnum cluster-template-update"
-alias mctd="magnum cluster-template-delete"
-
 function ssf {
     ssh fedora@$@
 }
