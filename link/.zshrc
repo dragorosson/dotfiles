@@ -62,6 +62,10 @@ function hgt {
     history | grep "$@" | tail
 }
 
+function hgv {
+    history | grep "$@" | vim -
+}
+
 function hh {
     history | grep "$@" | tail | awk '{$1 = $1 - '"$HISTCMD"' - 1; print}'
 }
