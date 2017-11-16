@@ -11,6 +11,7 @@ set notimeout
 set ttimeout
 set autoread
 set ignorecase
+set wildignorecase
 set smartcase
 set incsearch
 set backspace=indent,eol,start
