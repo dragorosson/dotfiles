@@ -63,12 +63,12 @@ zle -N zle-keymap-select
 
 # Aliases
 
-function hgt {
+function h {
     local cmd_map
     typeset -A cmd_map
 
     # Column/field 3 because there's an extra space before the command...
-    hist=$(history | grep "$@" | grep -v "hgt" | grep -v "hgv" | sort -nr | cut -d ' ' -f 3- | uniq)
+    hist=$(history | grep "$@" | grep -v "  h" | grep -v "  hv" | sort -nr | cut -d ' ' -f 3- | uniq)
     local count=0
     local output=$(echo $hist | while read line; do
         if [[ ${+cmd_map[$line]} -eq 0 ]]; then # Associative array contains line
@@ -87,7 +87,7 @@ function hgt {
     LAST_HGT_OUTPUT=$output
 }
 
-function hgv {
+function hv {
     history | grep "$@" | vim -
 }
 
@@ -99,11 +99,11 @@ function get_hgt_command {
     echo $LAST_HGT_OUTPUT | sed -n ${1}p # Print ${1}th line
 }
 
-function ff {
+function f {
     eval $(get_hgt_command $1)
 }
 
-function fff {
+function ff {
     eval $(get_hgt_command $1 | perl ~/vipe.pl)
 }
 
