@@ -5,6 +5,10 @@ plugins=()
 source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000000
+export SAVEHIST=10000000
+
 export EDITOR="vim"
 export KEYTIMEOUT=1
 bindkey -v 
