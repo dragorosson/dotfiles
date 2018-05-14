@@ -104,7 +104,9 @@ function f {
 }
 
 function ff {
-    eval $(get_hgt_command $1 | perl ~/vipe.pl)
+    cmd=$(get_hgt_command $1 | perl ~/vipe.pl)
+    print -s $cmd
+    eval $cmd
 }
 
 function do_gitrefresh {
